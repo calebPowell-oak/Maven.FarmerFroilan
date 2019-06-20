@@ -1,10 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 
 public class TomatoPlant extends Crop {
 
-    public Edible yield() {
+    public Tomato yield() {
         return new Tomato();
     }
 }

@@ -4,8 +4,8 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 
 import java.util.Collection;
 
-public class CropRow {
-    private Collection<Crop> crops;
+public class CropRow<Plant extends Crop> {
+    private Collection<Plant> crops;
     private Boolean isFertilized;
 
     public void fertilize(){
