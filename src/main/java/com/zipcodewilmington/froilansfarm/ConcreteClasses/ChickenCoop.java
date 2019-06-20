@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.ConcreteClasses;
 
+import com.sun.javafx.scene.SceneHelper;
 import com.zipcodewilmington.froilansfarm.AbstractClasses.Shelter;
 
-public class Stable extends Shelter<Horse> {
+public class ChickenCoop extends Shelter<Chicken> {
 }
