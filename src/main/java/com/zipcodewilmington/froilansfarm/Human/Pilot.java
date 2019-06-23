@@ -10,17 +10,13 @@ public class Pilot extends Person implements Flier {
         super(name);
     }
 
-    public void fly(Flyable flyable) {
-        flyable.takePilot(this);
-
-    }
-
     public void mount(Rideable rideable) {
         currentMount = rideable;
         currentMount.takeRider(this);
     }
 
     public void dismount() {
+        currentMount.dismount();
         currentMount = null;
 
     }
@@ -33,5 +29,11 @@ public class Pilot extends Person implements Flier {
     @Override
     public String makeNoise() {
         return "Yeeeepiie!";
+    }
+
+    @Override
+    public void fly() {
+        if (currentMount instanceof Flyable)
+            ((Flyable) currentMount).fly();
     }
 }

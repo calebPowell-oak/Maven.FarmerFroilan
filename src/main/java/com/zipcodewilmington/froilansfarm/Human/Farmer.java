@@ -21,10 +21,6 @@ public class Farmer extends Person implements Driver, Botanist {
         return "Hey yo!";
     }
 
-    public void drive(Driveable driveable) {
-        driveable.takeDriver(this);
-    }
-
     public void mount(Rideable rideable) {
         currentMount = rideable;
         currentMount.takeRider(this);
@@ -32,6 +28,7 @@ public class Farmer extends Person implements Driver, Botanist {
     }
 
     public void dismount() {
+        currentMount.dismount();
         currentMount = null;
     }
 
@@ -54,5 +51,11 @@ public class Farmer extends Person implements Driver, Botanist {
     public void feed(RefrigeratedFoodStorage storage, Animal animal){
         if (animal instanceof Horse)
             animal.eat(storage.getFirstInstanceOf(new EarCorn()));
+    }
+
+    @Override
+    public void drive() {
+        if(currentMount instanceof Driveable)
+            ((Driveable) currentMount).drive();
     }
 }

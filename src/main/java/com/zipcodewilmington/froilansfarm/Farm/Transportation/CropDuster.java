@@ -3,9 +3,10 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Human.Pilot;
+import com.zipcodewilmington.froilansfarm.Human.Rider;
 
-public class CropDuster implements FarmVehicle, Flyable {
-    private Pilot currentPilot;
+public class CropDuster implements FarmVehicle, Flyable, Rideable {
+    private Rider currentRider;
     private Farm currentFarm;
 
     public void operate(Farm farm) {
@@ -21,9 +22,9 @@ public class CropDuster implements FarmVehicle, Flyable {
     }
 
     @Override
-    public Boolean takePilot(Pilot pilot) {
-        if(currentPilot == null){
-            currentPilot = pilot;
+    public Boolean takeRider(Rider rider) {
+        if(currentRider == null){
+            currentRider = rider;
             return true;
         } else {
             return false;
@@ -31,14 +32,19 @@ public class CropDuster implements FarmVehicle, Flyable {
     }
 
     public void dismount(){
-        currentPilot = null;
+        currentRider = null;
     }
 
-    public Pilot getCurrentPilot() {
-        return currentPilot;
+    public Rider getCurrentPilot() {
+        return currentRider;
     }
 
     public Farm getCurrentFarm() {
         return currentFarm;
+    }
+
+    @Override
+    public void fly() {
+        //
     }
 }
