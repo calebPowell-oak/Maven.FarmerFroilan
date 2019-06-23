@@ -2,7 +2,6 @@ package com.zipcodewilmington.froilansfarm.Human;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.CornStalk;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
@@ -17,6 +16,11 @@ public class FarmerTest {
     @Before
     public void setup() {
         farmer = new Farmer("John");
+    }
+
+    @Test
+    public void makeNoise() {
+        Assert.assertEquals("Hey yo!",farmer.makeNoise());
     }
 
     @Test
