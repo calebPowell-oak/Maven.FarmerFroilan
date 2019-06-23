@@ -37,6 +37,10 @@ public class Horse extends Animal implements Rideable {
         }
     }
 
+    public void dismount(){
+        currentRider = null;
+    }
+
     public Rider getCurrentRider() {
         return currentRider;
     }
