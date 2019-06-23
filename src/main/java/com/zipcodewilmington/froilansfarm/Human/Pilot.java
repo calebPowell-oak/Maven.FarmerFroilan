@@ -21,6 +21,7 @@ public class Pilot extends Person implements Flier {
     }
 
     public void dismount() {
+        currentMount.dismount();
         currentMount = null;
 
     }

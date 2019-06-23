@@ -32,6 +32,7 @@ public class Farmer extends Person implements Driver, Botanist {
     }
 
     public void dismount() {
+        currentMount.dismount();
         currentMount = null;
     }
 
