@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
+import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
 
 public class Tractor implements FarmVehicle, Driveable {
@@ -12,6 +14,10 @@ public class Tractor implements FarmVehicle, Driveable {
     }
 
     public String makeNoise() {
+        return "Tractor is making lots of noise!";
+    }
+
+    public Edible harvestCrops(CropRow cropRow){
         return null;
     }
 

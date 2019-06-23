@@ -17,7 +17,7 @@ public class CropDuster implements FarmVehicle, Flyable {
     }
 
     public void fertilize(CropRow cropRow){
-
+        cropRow.fertilize();
     }
 
     @Override
