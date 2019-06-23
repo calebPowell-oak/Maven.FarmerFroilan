@@ -7,6 +7,14 @@ import com.zipcodewilmington.froilansfarm.Human.Rider;
 public class Horse extends Animal implements Rideable {
 
     private Rider currentRider;
+    private Boolean hasBeenRidden;
+
+    @Override
+    public void sleep(){
+        thingsAteForTheDay.clear();
+        isHungry = true;
+        hasBeenRidden = false;
+    }
 
     public Horse(String name) {
         super(name);
