@@ -3,6 +3,8 @@ package com.zipcodewilmington.froilansfarm.Human;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.CornStalk;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
+import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Tractor;
 import org.junit.Assert;
@@ -59,5 +61,40 @@ public class FarmerTest {
         CropRow cropRow = new CropRow();
 
         farmer.plant(expected,cropRow);
+        Assert.assertTrue(cropRow.getCrops().contains(expected));
+    }
+
+    @Test
+    public void feed() {
+        Horse horse = new Horse("Horse 1");
+        RefrigeratedFoodStorage storage = new RefrigeratedFoodStorage();
+        EarCorn expected = new EarCorn();
+        storage.getEdibles().add(expected);
+        Assert.assertTrue(storage.getEdibles().contains(expected));
+
+        farmer.feed(storage,horse);
+        Assert.assertFalse(storage.getEdibles().contains(expected));
+    }
+
+    @Test
+    public void feedHorse() {
+        Horse horse = new Horse("Horse 1");
+        RefrigeratedFoodStorage storage = new RefrigeratedFoodStorage();
+        EarCorn expected = new EarCorn();
+        storage.getEdibles().add(expected);
+        Assert.assertTrue(horse.getHungry());
+        farmer.feed(storage,horse);
+        Assert.assertFalse(horse.getHungry());
+    }
+
+    @Test
+    public void feedHorseEatHistory() {
+        Horse horse = new Horse("Horse 1");
+        RefrigeratedFoodStorage storage = new RefrigeratedFoodStorage();
+        EarCorn expected = new EarCorn();
+        storage.getEdibles().add(expected);
+        Assert.assertFalse(horse.getThingsAteForTheDay().contains(expected));
+        farmer.feed(storage,horse);
+        Assert.assertTrue(horse.getThingsAteForTheDay().contains(expected));
     }
 }
