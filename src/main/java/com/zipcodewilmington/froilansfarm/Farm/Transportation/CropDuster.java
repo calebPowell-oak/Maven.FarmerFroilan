@@ -13,7 +13,7 @@ public class CropDuster implements FarmVehicle, Flyable {
     }
 
     public String makeNoise() {
-        return "Crop duster is making lots of Noise!";
+        return "*airplane noises*";
     }
 
     public void fertilize(CropRow cropRow){
@@ -28,5 +28,13 @@ public class CropDuster implements FarmVehicle, Flyable {
         } else {
             return false;
         }
+    }
+
+    public Pilot getCurrentPilot() {
+        return currentPilot;
+    }
+
+    public Farm getCurrentFarm() {
+        return currentFarm;
     }
 }

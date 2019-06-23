@@ -14,7 +14,7 @@ public class Tractor implements FarmVehicle, Driveable {
     }
 
     public String makeNoise() {
-        return "Tractor is making lots of noise!";
+        return "*tractor noises*";
     }
 
     public Edible harvestCrops(CropRow cropRow){
@@ -29,5 +29,13 @@ public class Tractor implements FarmVehicle, Driveable {
         } else {
             return false;
         }
+    }
+
+    public Driver getCurrentDriver() {
+        return currentDriver;
+    }
+
+    public Farm getCurrentFarm() {
+        return currentFarm;
     }
 }
