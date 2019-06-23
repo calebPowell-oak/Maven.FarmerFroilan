@@ -14,7 +14,7 @@ public class Tractor implements FarmVehicle, Driveable {
     }
 
     public String makeNoise() {
-        return "Tractor is making lots of noise!";
+        return "";
     }
 
     public Edible harvestCrops(CropRow cropRow){

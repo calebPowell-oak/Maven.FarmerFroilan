@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
 
 public class Pilot extends Person implements Flier {
 
-    Pilot(String name) {
+    public Pilot(String name) {
         super(name);
     }
 
