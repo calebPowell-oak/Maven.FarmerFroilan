@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Pomegranate;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import com.zipcodewilmington.froilansfarm.Generic.Animal;
 import org.junit.Assert;
 import org.junit.Test;
@@ -24,6 +27,8 @@ public class ChickenTest {
 
     @org.junit.Test
     public void eat() {
+        Chicken testChicken = new Chicken();
+
     }
 
     @org.junit.Test
