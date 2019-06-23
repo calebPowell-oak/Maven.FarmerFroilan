@@ -8,7 +8,8 @@ public class Chicken extends Animal implements Produce {
     private Boolean isFertilized;
 
     public EdibleEgg yield(){
-        return new EdibleEgg();
+
+            return new EdibleEgg();
     }
 
     public void eat(Edible thingToEat) {
