@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
+import com.zipcodewilmington.froilansfarm.Generic.Animal;
 import org.junit.Assert;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -25,7 +27,7 @@ public class ChickenTest {
     }
 
     @org.junit.Test
-    public void makeNoise() {
+    public void testMakeNoise() {
         //given
         Chicken testChicken = new Chicken();
 
@@ -33,5 +35,29 @@ public class ChickenTest {
         String actualNoise = testChicken.makeNoise();
 
         Assert.assertEquals(expectedNoise,actualNoise);
+    }
+
+    @Test
+    public void testMakeNoise2(){
+        Chicken testChicken= new Chicken();
+
+        String expectedNoise = "Caw Caw";
+        String actualNoise= testChicken.makeNoise();
+
+        Assert.assertNotEquals(expectedNoise,actualNoise);
+    }
+
+    @Test
+    public void testImplementation(){
+        Chicken testChicken = new Chicken();
+
+        Assert.assertTrue(testChicken instanceof Produce);
+    }
+
+    @Test
+    public void testInheritance(){
+        Chicken testChicken = new Chicken ();
+
+        Assert.assertTrue(testChicken instanceof Animal);
     }
 }

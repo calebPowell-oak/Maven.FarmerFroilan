@@ -13,6 +13,8 @@ public class Chicken extends Animal implements Produce {
     }
 
     public void eat(Edible thingToEat) {
+        // chicken + thingto eat
+        // shelter minus thing to eat
 
     }
 
