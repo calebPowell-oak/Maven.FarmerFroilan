@@ -25,6 +25,11 @@ public class Pilot extends Person implements Flier {
 
     }
 
+    public Rideable getCurrentMount() {
+        return currentMount;
+    }
+
+
     @Override
     public String makeNoise() {
         return "Yeeeepiie!";
