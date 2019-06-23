@@ -31,10 +31,26 @@ public class FarmerTest {
     }
 
     @Test
+    public void mountHorseRiderTest() {
+        Horse expected = new Horse("Horse 1");
+        farmer.mount(expected);
+        Assert.assertEquals(farmer, expected.getCurrentRider());
+    }
+
+    @Test
     public void dismount() {
         farmer.mount(new Horse("Horse 1"));
         farmer.dismount();
         Assert.assertNull(farmer.getCurrentMount());
+    }
+
+    @Test
+    public void dismountRiderTest() {
+        Horse expected = new Horse("Horse 1");
+        farmer.mount(expected);
+        farmer.dismount();
+        Assert.assertNull(expected.getCurrentRider());
+
     }
 
     @Test
