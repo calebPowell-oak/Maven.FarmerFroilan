@@ -4,13 +4,9 @@ import com.zipcodewilmington.froilansfarm.Generic.Animal;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 
 public abstract class Person extends Animal {
-    String name;
-
-    public void eat(Edible thingToEat) {
-
+    Person(String name){
+        super(name);
     }
 
-    public void makeNoise() {
-
-    }
+    public abstract String makeNoise();
 }

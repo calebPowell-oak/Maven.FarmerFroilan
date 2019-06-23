@@ -5,6 +5,10 @@ import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
 
 public class Pilot extends Person implements Flier {
 
+    Pilot(String name) {
+        super(name);
+    }
+
     public void fly(Flyable flyable) {
 
     }
@@ -15,5 +19,10 @@ public class Pilot extends Person implements Flier {
 
     public void dismount() {
 
+    }
+
+    @Override
+    public String makeNoise() {
+        return "Yeeeepiie!";
     }
 }
