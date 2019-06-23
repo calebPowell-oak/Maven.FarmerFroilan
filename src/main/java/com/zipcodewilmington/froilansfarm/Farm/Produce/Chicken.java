@@ -7,6 +7,14 @@ import com.zipcodewilmington.froilansfarm.Generic.Animal;
 public class Chicken extends Animal implements Produce {
     private Boolean isFertilized;
 
+    public Chicken(String name) {
+        super(name);
+    }
+
+    public Chicken(){
+        super("no name set");
+    }
+
     public EdibleEgg yield(){
 
             return new EdibleEgg();

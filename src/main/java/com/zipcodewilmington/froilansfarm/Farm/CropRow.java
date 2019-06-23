@@ -11,4 +11,12 @@ public class CropRow<Plant extends Crop> {
     public void fertilize(){
 
     }
+
+    public Collection<Plant> getCrops() {
+        return crops;
+    }
+
+    public Boolean getFertilized() {
+        return isFertilized;
+    }
 }

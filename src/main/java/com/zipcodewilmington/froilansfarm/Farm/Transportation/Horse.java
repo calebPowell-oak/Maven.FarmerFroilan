@@ -14,12 +14,17 @@ public class Horse extends Animal implements Rideable {
 
     }
 
+    public Horse(){
+        super("no name set");
+        currentRider = null;
+    }
+
     public void eat(EarCorn cornToEat) {
         super.eat(cornToEat);
     }
 
     public String makeNoise() {
-        return "Horse is making some noise.";
+        return "Neeeiggghh";
     }
 
     @Override
@@ -30,5 +35,9 @@ public class Horse extends Animal implements Rideable {
         } else {
             return false;
         }
+    }
+
+    public Rider getCurrentRider() {
+        return currentRider;
     }
 }
