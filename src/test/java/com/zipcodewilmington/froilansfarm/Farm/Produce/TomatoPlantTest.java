@@ -27,6 +27,7 @@ public class TomatoPlantTest {
     @Test
     public void testImplementation(){
         TomatoPlant testTomato = new TomatoPlant();
+
         Assert.assertTrue(testTomato instanceof Crop);
     }
 }
