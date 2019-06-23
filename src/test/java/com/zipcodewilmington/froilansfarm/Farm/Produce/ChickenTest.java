@@ -28,7 +28,11 @@ public class ChickenTest {
     @org.junit.Test
     public void eat() {
         Chicken testChicken = new Chicken();
+        Boolean isHungry = true;
+        Tomato testTomato = new Tomato();
+        testChicken.eat(testTomato);
 
+        Assert.assertFalse(isHungry);
     }
 
     @org.junit.Test
