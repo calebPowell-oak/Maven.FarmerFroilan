@@ -16,7 +16,7 @@ public class HorseTest {
         EarCorn e = new EarCorn();
 
         horse.eat(e);
-        Integer actual = null; // See how much horse has eaten.
+        Integer actual = horse.getThingsAteForTheDay().size(); // See how much horse has eaten.
 
         Assert.assertEquals((Integer) 1, actual);
     }
