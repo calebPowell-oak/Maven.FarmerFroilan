@@ -30,6 +30,10 @@ public class CropDuster implements FarmVehicle, Flyable {
         }
     }
 
+    public void dismount(){
+        currentPilot = null;
+    }
+
     public Pilot getCurrentPilot() {
         return currentPilot;
     }

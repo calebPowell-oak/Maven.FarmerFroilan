@@ -33,4 +33,16 @@ public abstract class Animal implements Eater, NoiseMaker {
         summary.append("for the day.");
         return summary.toString();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Edible> getThingsAteForTheDay() {
+        return thingsAteForTheDay;
+    }
+
+    public Boolean getHungry() {
+        return isHungry;
+    }
 }

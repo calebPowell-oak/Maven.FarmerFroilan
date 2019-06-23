@@ -33,6 +33,10 @@ public class Tractor implements FarmVehicle, Driveable {
         }
     }
 
+    public void dismount(){
+        currentDriver = null;
+    }
+
     public Driver getCurrentDriver() {
         return currentDriver;
     }
