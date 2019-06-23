@@ -8,7 +8,7 @@ public class Horse extends Animal implements Rideable {
 
     private Rider currentRider;
 
-    protected Horse(String name) {
+    public Horse(String name) {
         super(name);
         currentRider = null;
 

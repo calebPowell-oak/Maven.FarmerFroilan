@@ -6,7 +6,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Transportation.Driveable;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
 
 public class Farmer extends Person implements Driver, Botanist {
-    Rideable currentMount;
+    private Rideable currentMount;
 
     public Farmer(String name) {
         super(name);
@@ -19,10 +19,12 @@ public class Farmer extends Person implements Driver, Botanist {
 
     public void drive(Driveable driveable) {
 
+
     }
 
     public void mount(Rideable rideable) {
         currentMount = rideable;
+        currentMount.takeRider(this);
 
     }
 
@@ -34,4 +36,7 @@ public class Farmer extends Person implements Driver, Botanist {
 
     }
 
+    public Rideable getCurrentMount() {
+        return currentMount;
+    }
 }

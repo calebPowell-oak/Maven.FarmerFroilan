@@ -14,7 +14,7 @@ public class FarmerTest {
 
     @Before
     public void setup() {
-        farmer = new Farmer("John",21);
+        farmer = new Farmer("John");
     }
 
     @Test
@@ -25,12 +25,16 @@ public class FarmerTest {
 
     @Test
     public void mountHorse() {
-        Horse expected = new Horse();
+        Horse expected = new Horse("Horse 1");
         farmer.mount(expected);
+        Assert.assertEquals(expected,farmer.getCurrentMount());
     }
 
     @Test
     public void dismount() {
+        farmer.mount(new Horse("Horse 1"));
+        farmer.dismount();
+        Assert.assertNull(farmer.getCurrentMount());
     }
 
     @Test
