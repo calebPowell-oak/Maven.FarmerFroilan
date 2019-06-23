@@ -16,7 +16,9 @@ public class Chicken extends Animal implements Produce {
 
     }
 
-    public void makeNoise() {
+    public String makeNoise() {
+        // changed from void to String
+        return "CLUCK!";
 
     }
 }
