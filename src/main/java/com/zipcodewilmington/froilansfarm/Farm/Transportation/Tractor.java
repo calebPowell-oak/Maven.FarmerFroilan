@@ -7,7 +7,7 @@ public class Tractor implements FarmVehicle, Driveable {
 
     }
 
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return null;
     }
 }

@@ -8,8 +8,8 @@ public class CropDuster implements FarmVehicle, Flyable {
 
     }
 
-    public void makeNoise() {
-
+    public String makeNoise() {
+        return null;
     }
 
     public void fertilize(CropRow cropRow){
