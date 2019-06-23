@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
+
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,6 +23,13 @@ public class TomatoPlantTest {
     @Test
     public void yield() {
         //check if new tomato is created
+        //given
+        TomatoPlant testTomato = new TomatoPlant();
+        testTomato.setFertilized(true);
+        testTomato.setHasBeenHarvested(false);
+        Edible expected = testTomato.yield();
+        System.out.println(expected);
+        Assert.assertTrue(((Tomato)expected instanceof Edible));
 
 
     }

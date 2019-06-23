@@ -18,4 +18,12 @@ public abstract class Crop implements Produce {
     public void setHasBeenHarvested(Boolean hasBeenHarvested) {
         this.hasBeenHarvested = hasBeenHarvested;
     }
+
+    public Boolean getFertilized() {
+        return isFertilized;
+    }
+
+    public Boolean getHasBeenHarvested() {
+        return hasBeenHarvested;
+    }
 }
