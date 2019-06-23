@@ -36,8 +36,15 @@ public class Farmer extends Person implements Driver, Botanist {
     }
 
     public void plant(Crop c, CropRow cr) {
-        cr.getCrops().add(c);
-
+        //plant 20 of a particular crop in a row
+        Class cropClass = c.getClass();
+        for(int i = 0; i < 20; i++){
+            try {
+                cr.getCrops().add(cropClass.newInstance());
+            } catch (Exception e){
+                e.printStackTrace(System.out);
+            }
+        }
     }
 
     public Rideable getCurrentMount() {

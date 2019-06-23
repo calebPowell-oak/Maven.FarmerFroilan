@@ -56,12 +56,23 @@ public class FarmerTest {
     }
 
     @Test
-    public void plant() {
-        CornStalk expected = new CornStalk();
-        CropRow cropRow = new CropRow();
+    public void plant_instanceOfCorrectCrop(){
+        CornStalk c = new CornStalk();
+        CropRow cr = new CropRow();
 
-        farmer.plant(expected,cropRow);
-        Assert.assertTrue(cropRow.getCrops().contains(expected));
+        farmer.plant(c, cr);
+
+        Assert.assertTrue(cr.getCrops().get(0) instanceof CornStalk);
+    }
+
+    @Test
+    public void plant_multiple(){
+        CornStalk c = new CornStalk();
+        CropRow cr = new CropRow();
+
+        farmer.plant(c, cr);
+
+        Assert.assertEquals(20, cr.getCrops().size());
     }
 
     @Test

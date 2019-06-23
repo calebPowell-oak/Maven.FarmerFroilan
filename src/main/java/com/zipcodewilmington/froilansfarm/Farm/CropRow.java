@@ -6,9 +6,10 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class CropRow<Plant extends Crop> {
-    private Collection<Plant> crops = new ArrayList<>();
+    private List<Plant> crops = new ArrayList<>();
     private Boolean isFertilized;
 
     public void fertilize(){
@@ -18,7 +19,7 @@ public class CropRow<Plant extends Crop> {
         isFertilized = true;
     }
 
-    public Collection<Plant> getCrops() {
+    public List<Plant> getCrops() {
         return crops;
     }
 
