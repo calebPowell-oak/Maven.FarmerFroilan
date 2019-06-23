@@ -6,19 +6,32 @@ import com.zipcodewilmington.froilansfarm.Farm.Transportation.Driveable;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
 
 public class Farmer extends Person implements Driver, Botanist {
+    Rideable currentMount;
+
+    public Farmer(String name) {
+        super(name);
+    }
+
+    @Override
+    public String makeNoise() {
+        return "Hey yo!";
+    }
+
     public void drive(Driveable driveable) {
 
     }
 
     public void mount(Rideable rideable) {
+        currentMount = rideable;
 
     }
 
     public void dismount() {
-
+        currentMount = null;
     }
 
     public void plant(Crop c, CropRow cr) {
 
     }
+
 }
