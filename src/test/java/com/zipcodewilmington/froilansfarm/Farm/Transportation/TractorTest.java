@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
 import com.zipcodewilmington.froilansfarm.Human.Farmer;
 import org.junit.Assert;
@@ -38,11 +39,17 @@ public class TractorTest {
     @Test
     public void harvest() {
         CropRow<TomatoPlant> cropRow = new CropRow<>();
-        Tractor cropDuster = new Tractor();
+        TomatoPlant tp = new TomatoPlant();
+        tp.setFertilized(true);
+        cropRow.getCrops().add(new TomatoPlant());
+        Tractor tractor = new Tractor();
+        RefrigeratedFoodStorage rfs = new RefrigeratedFoodStorage();
 
-        cropDuster.harvestCrops(cropRow);
+        tractor.harvestCrops(cropRow, rfs);
 
-        Assert.assertNotNull(null);// Harvest things!
+        Integer actualSize = rfs.getEdibles().size();
+
+        Assert.assertEquals((Integer) 1, actualSize);
     }
 
     @Test

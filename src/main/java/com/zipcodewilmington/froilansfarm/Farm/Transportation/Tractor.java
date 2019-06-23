@@ -2,7 +2,9 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
+import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
 
 public class Tractor implements FarmVehicle, Driveable {
@@ -17,8 +19,8 @@ public class Tractor implements FarmVehicle, Driveable {
         return "*tractor noises*";
     }
 
-    public Edible harvestCrops(CropRow cropRow){
-        return null;
+    public void harvestCrops(CropRow cropRow, RefrigeratedFoodStorage storage){
+         storage.storeStash(cropRow.harvestCrops());
     }
 
     @Override
