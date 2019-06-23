@@ -26,7 +26,6 @@ public class FarmerTest {
     @Test
     public void drive() {
         Tractor expected = new Tractor();
-        farmer.drive(expected);
     }
 
     @Test

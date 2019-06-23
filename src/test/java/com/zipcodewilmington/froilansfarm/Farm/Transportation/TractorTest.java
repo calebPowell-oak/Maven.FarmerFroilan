@@ -6,6 +6,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
 import com.zipcodewilmington.froilansfarm.Human.Farmer;
+import com.zipcodewilmington.froilansfarm.Human.Rider;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -53,11 +54,11 @@ public class TractorTest {
     }
 
     @Test
-    public void takeDriver_trueWhenEmpty() {
+    public void takeRider_trueWhenEmpty() {
         Tractor cropDuster = new Tractor();
         Farmer pilot = new Farmer("Yooo");
 
-        Boolean result = cropDuster.takeDriver(pilot);
+        Boolean result = cropDuster.takeRider(pilot);
 
         Assert.assertTrue(result);
     }
@@ -68,8 +69,8 @@ public class TractorTest {
         Farmer pilot = new Farmer("Yooo");
         Farmer pilot2 = new Farmer("Zooo");
 
-        cropDuster.takeDriver(pilot);
-        Boolean result = cropDuster.takeDriver(pilot2);
+        cropDuster.takeRider(pilot);
+        Boolean result = cropDuster.takeRider(pilot2);
 
         Assert.assertFalse(result);
     }
@@ -79,8 +80,8 @@ public class TractorTest {
         Tractor cropDuster = new Tractor();
         Farmer pilot = new Farmer("Yooo");
 
-        cropDuster.takeDriver(pilot);
-        Driver actual = cropDuster.getCurrentDriver();
+        cropDuster.takeRider(pilot);
+        Rider actual = cropDuster.getCurrentDriver();
 
         Assert.assertEquals(pilot, actual);
     }
@@ -91,9 +92,9 @@ public class TractorTest {
         Farmer pilot = new Farmer("Yooo");
         Farmer pilot2 = new Farmer("Zooo");
 
-        cropDuster.takeDriver(pilot);
-        cropDuster.takeDriver(pilot2);
-        Driver actual = cropDuster.getCurrentDriver();
+        cropDuster.takeRider(pilot);
+        cropDuster.takeRider(pilot2);
+        Rider actual = cropDuster.getCurrentDriver();
 
         Assert.assertEquals(pilot, actual);
     }
