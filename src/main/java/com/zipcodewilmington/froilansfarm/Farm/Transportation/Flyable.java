@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
-public interface Flyable {
+import com.zipcodewilmington.froilansfarm.Human.Pilot;
 
+public interface Flyable {
+    Boolean takePilot(Pilot pilot); //returns true if pilot was able to get on
 }
