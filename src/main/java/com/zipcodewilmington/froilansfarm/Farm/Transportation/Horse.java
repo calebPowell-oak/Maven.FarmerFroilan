@@ -24,7 +24,7 @@ public class Horse extends Animal implements Rideable {
     }
 
     public String makeNoise() {
-        return "Horse is making some noise.";
+        return "Neeeiggghh";
     }
 
     @Override
@@ -35,5 +35,9 @@ public class Horse extends Animal implements Rideable {
         } else {
             return false;
         }
+    }
+
+    public Rider getCurrentRider() {
+        return currentRider;
     }
 }
