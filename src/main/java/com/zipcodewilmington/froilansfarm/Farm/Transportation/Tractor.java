@@ -2,13 +2,12 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
+import com.zipcodewilmington.froilansfarm.Human.Rider;
 
-public class Tractor implements FarmVehicle, Driveable {
-    private Driver currentDriver;
+public class Tractor implements FarmVehicle, Driveable, Rideable {
+    private Rider currentRider;
     private Farm currentFarm;
 
     public void operate(Farm farm) {
@@ -24,9 +23,9 @@ public class Tractor implements FarmVehicle, Driveable {
     }
 
     @Override
-    public Boolean takeDriver(Driver driver) {
-        if(currentDriver == null){
-            currentDriver = driver;
+    public Boolean takeRider(Rider rider) {
+        if(currentRider == null){
+            currentRider = rider;
             return true;
         } else {
             return false;
@@ -34,14 +33,19 @@ public class Tractor implements FarmVehicle, Driveable {
     }
 
     public void dismount(){
-        currentDriver = null;
+        currentRider = null;
     }
 
-    public Driver getCurrentDriver() {
-        return currentDriver;
+    public Rider getCurrentDriver() {
+        return currentRider;
     }
 
     public Farm getCurrentFarm() {
         return currentFarm;
+    }
+
+    @Override
+    public void drive() {
+        //
     }
 }
