@@ -14,9 +14,7 @@ public class TomatoPlant extends Crop {
 
     public Tomato yield() {
         if( super.getFertilized() && !super.getHasBeenHarvested())
-
-                    return new Tomato();
-
-         return null;
+            return new Tomato();
+        return null;
     }
 }

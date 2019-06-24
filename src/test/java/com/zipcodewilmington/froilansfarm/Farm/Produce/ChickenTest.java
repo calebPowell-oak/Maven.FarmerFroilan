@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Pomegranate;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import com.zipcodewilmington.froilansfarm.Generic.Animal;
@@ -21,19 +22,24 @@ public class ChickenTest {
 
     @org.junit.Test
     public void yield() {
-
-
-    }
-
-    @org.junit.Test
-    public void eat() {
         Chicken testChicken = new Chicken();
-        Boolean isHungry = true;
-        Tomato testTomato = new Tomato();
-        testChicken.eat(testTomato);
+        Edible expected = testChicken.yield();
 
-        Assert.assertFalse(isHungry);
+        Assert.assertTrue(expected instanceof EdibleEgg);
+
+
+
     }
+
+//    @org.junit.Test
+//    public void eat() {
+//        Chicken testChicken = new Chicken();
+//        getHungry();
+//        Tomato testTomato = new Tomato();
+//        testChicken.eat(testTomato);
+//
+//        Assert.assertFalse(isHungry);
+//    }
 
     @org.junit.Test
     public void testMakeNoise() {

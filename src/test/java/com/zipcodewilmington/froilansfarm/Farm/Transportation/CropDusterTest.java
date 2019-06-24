@@ -2,13 +2,11 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Human.Pilot;
+import com.zipcodewilmington.froilansfarm.Human.Rider;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CropDusterTest {
 
@@ -45,48 +43,48 @@ public class CropDusterTest {
     }
 
     @Test
-    public void takePilot_trueWhenEmpty() {
+    public void takeRider_trueWhenEmpty() {
         CropDuster cropDuster = new CropDuster();
         Pilot pilot = new Pilot("Yooo");
 
-        Boolean result = cropDuster.takePilot(pilot);
+        Boolean result = cropDuster.takeRider(pilot);
 
         Assert.assertTrue(result);
     }
 
     @Test
-    public void takePilot_falseWhenOccupied() {
+    public void takeRider_falseWhenOccupied() {
         CropDuster cropDuster = new CropDuster();
         Pilot pilot = new Pilot("Yooo");
         Pilot pilot2 = new Pilot("Zooo");
 
-        cropDuster.takePilot(pilot);
-        Boolean result = cropDuster.takePilot(pilot2);
+        cropDuster.takeRider(pilot);
+        Boolean result = cropDuster.takeRider(pilot2);
 
 
         Assert.assertFalse(result);
     }
 
     @Test
-    public void takePilot_onePilotTries() {
+    public void takeRider_onePilotTries() {
         CropDuster cropDuster = new CropDuster();
         Pilot pilot = new Pilot("Yooo");
 
-        cropDuster.takePilot(pilot);
-        Pilot actual = cropDuster.getCurrentPilot();
+        cropDuster.takeRider(pilot);
+        Rider actual = cropDuster.getCurrentPilot();
 
         Assert.assertEquals(pilot, actual);
     }
 
     @Test
-    public void takePilot_twoPilotsTry() {
+    public void takeRider_twoPilotsTry() {
         CropDuster cropDuster = new CropDuster();
         Pilot pilot = new Pilot("Yooo");
         Pilot pilot2 = new Pilot("Zooo");
 
-        cropDuster.takePilot(pilot);
-        cropDuster.takePilot(pilot2);
-        Pilot actual = cropDuster.getCurrentPilot();
+        cropDuster.takeRider(pilot);
+        cropDuster.takeRider(pilot2);
+        Rider actual = cropDuster.getCurrentPilot();
 
         Assert.assertEquals(pilot, actual);
     }

@@ -8,8 +8,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class TomatoPlantTest {
 
     @Before
@@ -28,8 +26,8 @@ public class TomatoPlantTest {
         testTomato.setFertilized(true);
         testTomato.setHasBeenHarvested(false);
         Edible expected = testTomato.yield();
-        System.out.println(expected);
-        Assert.assertTrue(((Tomato)expected instanceof Edible));
+
+        Assert.assertTrue((expected instanceof Tomato));
 
 
     }
