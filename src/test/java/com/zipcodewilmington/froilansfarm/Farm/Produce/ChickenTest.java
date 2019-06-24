@@ -31,15 +31,14 @@ public class ChickenTest {
 
     }
 
-//    @org.junit.Test
-//    public void eat() {
-//        Chicken testChicken = new Chicken();
-//        getHungry();
-//        Tomato testTomato = new Tomato();
-//        testChicken.eat(testTomato);
-//
-//        Assert.assertFalse(isHungry);
-//    }
+    @org.junit.Test
+    public void eat() {
+        Chicken testChicken = new Chicken();
+        Tomato testTomato = new Tomato();
+        testChicken.eat(testTomato);
+
+        Assert.assertFalse(testChicken.getHungry());
+    }
 
     @org.junit.Test
     public void testMakeNoise() {
