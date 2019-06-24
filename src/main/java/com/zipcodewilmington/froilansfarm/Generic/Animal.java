@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Animal implements Eater, NoiseMaker {
-    String name;
-    List<Edible> thingsAteForTheDay;
-    Boolean isHungry;
+    protected String name;
+    protected List<Edible> thingsAteForTheDay;
+    protected Boolean isHungry;
 
     protected Animal(String name){
         this.name = name;

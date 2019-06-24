@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
+import com.zipcodewilmington.froilansfarm.Human.Farmer;
 import com.zipcodewilmington.froilansfarm.Human.Pilot;
 import com.zipcodewilmington.froilansfarm.Human.Rider;
 import org.junit.Assert;
@@ -40,6 +41,28 @@ public class CropDusterTest {
         Boolean actual = cropRow.getFertilized();
 
         Assert.assertTrue(actual);
+    }
+
+    @Test
+    public void fly(){
+        Farm farm = new Farm();
+        CropRow cr = new CropRow();
+        TomatoPlant tp = new TomatoPlant();
+        tp.setFertilized(false);
+        tp.setHasBeenHarvested(false);
+        cr.getCrops().add(tp);
+        farm.getField().getCropRows().add(cr);
+        CropDuster tractor = new CropDuster();
+        tractor.operate(farm);
+        Pilot farmer = new Pilot("Froilanda");
+        farmer.mount(tractor);
+        farmer.fly();
+
+        Boolean actualAtCrop = tp.getFertilized();
+        Boolean actualAtRow = cr.getFertilized();
+
+        Assert.assertTrue(actualAtCrop);
+        Assert.assertTrue(actualAtRow);
     }
 
     @Test

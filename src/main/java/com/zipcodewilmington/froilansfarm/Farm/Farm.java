@@ -10,6 +10,14 @@ public class Farm {
     Farmhouse fh;
     Collection<Stable> stables;
     Collection<ChickenCoop> chickenCoops;
-    Collection<RefrigeratedFoodStorage> foodStorages;
-    Collection<Field> fields;
+    RefrigeratedFoodStorage foodStorage = new RefrigeratedFoodStorage();
+    Field field = new Field();
+
+    public RefrigeratedFoodStorage getFoodStorage() {
+        return foodStorage;
+    }
+
+    public Field getField() {
+        return field;
+    }
 }

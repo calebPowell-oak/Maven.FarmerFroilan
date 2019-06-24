@@ -45,6 +45,9 @@ public class CropDuster implements FarmVehicle, Flyable, Rideable {
 
     @Override
     public void fly() {
-        //
+        // for each croprow in field in farm
+        for(CropRow row : currentFarm.getField().getCropRows()){
+            fertilize(row);
+        }
     }
 }
