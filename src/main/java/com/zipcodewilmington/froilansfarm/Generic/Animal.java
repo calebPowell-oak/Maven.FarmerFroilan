@@ -27,7 +27,7 @@ public abstract class Animal implements Eater, NoiseMaker {
     }
 
     public String summary(){
-        StringBuilder summary = new StringBuilder(name + " ate ");
+        StringBuilder summary = new StringBuilder(name + " ate:\n");
         for(Edible food: thingsAteForTheDay)
             summary.append(food).append("\n");
         summary.append("for the day.");
