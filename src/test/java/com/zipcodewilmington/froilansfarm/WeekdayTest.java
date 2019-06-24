@@ -52,8 +52,7 @@ public class WeekdayTest {
             farm.getStables().get(0).add(new Horse("Horse " +i));
 
     }
-
-    @Test
+    
     public void everyDayTask() {
         for(Chicken chicken : farm.getChickenCoops().get(0).getOccupants())
             froilan.feed(farm.getFoodStorage(), chicken);
