@@ -1,7 +1,14 @@
 package com.zipcodewilmington.froilansfarm.Human;
 
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Chicken;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
+import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Flyable;
+import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
+import com.zipcodewilmington.froilansfarm.Generic.Animal;
 
 public class Pilot extends Person implements Flier {
     Rideable currentMount;
@@ -35,5 +42,16 @@ public class Pilot extends Person implements Flier {
     public void fly() {
         if (currentMount instanceof Flyable)
             ((Flyable) currentMount).fly();
+    }
+
+    public void feed(RefrigeratedFoodStorage storage, Animal animal) {
+        if (animal instanceof Pilot) {
+            animal.eat(storage.getFirstInstanceOf(new Tomato()));
+            for (int i = 0; i < 2; i++) {
+                animal.eat(storage.getFirstInstanceOf(new EarCorn()));
+                animal.eat(storage.getFirstInstanceOf(new EdibleEgg()));
+            }
+        }
+
     }
 }

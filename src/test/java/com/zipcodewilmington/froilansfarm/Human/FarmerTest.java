@@ -3,6 +3,7 @@ package com.zipcodewilmington.froilansfarm.Human;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.CornStalk;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Tractor;
@@ -110,5 +111,35 @@ public class FarmerTest {
         Assert.assertFalse(horse.getThingsAteForTheDay().contains(expected));
         farmer.feed(storage,horse);
         Assert.assertTrue(horse.getThingsAteForTheDay().contains(expected));
+    }
+
+    @Test
+    public void testSleep() {
+        farmer.eat(new EarCorn());
+        Assert.assertFalse(farmer.getHungry());
+        farmer.sleep();
+        Assert.assertTrue(farmer.getHungry());
+    }
+
+    @Test
+    public void testSleepList() {
+        EarCorn expected = new EarCorn();
+        farmer.eat(expected);
+        Assert.assertTrue(farmer.getThingsAteForTheDay().contains(expected));
+        farmer.sleep();
+        Assert.assertFalse(farmer.getThingsAteForTheDay().contains(expected));
+    }
+
+    @Test
+    public void getName() {
+        Assert.assertEquals("John", farmer.getName());
+    }
+
+    @Test
+    public void testSummary() {
+        farmer.eat(new EarCorn());
+        farmer.eat(new Tomato());
+
+        Assert.assertEquals("John ate:\nEarCorn\nTomato\nfor the day.",farmer.summary());
     }
 }
