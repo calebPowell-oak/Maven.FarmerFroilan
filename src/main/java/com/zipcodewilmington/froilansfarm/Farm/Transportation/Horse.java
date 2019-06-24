@@ -19,7 +19,7 @@ public class Horse extends Animal implements Rideable {
     public Horse(String name) {
         super(name);
         currentRider = null;
-
+        hasBeenRidden = false;
     }
 
     public Horse(){
@@ -39,6 +39,7 @@ public class Horse extends Animal implements Rideable {
     public Boolean takeRider(Rider rider) {
         if(currentRider == null){
             currentRider = rider;
+            hasBeenRidden = true;
             return true;
         } else {
             return false;
@@ -51,5 +52,9 @@ public class Horse extends Animal implements Rideable {
 
     public Rider getCurrentRider() {
         return currentRider;
+    }
+
+    public Boolean getHasBeenRidden() {
+        return hasBeenRidden;
     }
 }
