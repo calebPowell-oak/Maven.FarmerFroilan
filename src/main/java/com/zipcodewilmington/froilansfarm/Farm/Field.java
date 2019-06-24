@@ -2,11 +2,12 @@ package com.zipcodewilmington.froilansfarm.Farm;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Field {
-    Collection<CropRow> cropRows = new ArrayList<>();
+    List<CropRow> cropRows = new ArrayList<>();
 
-    public Collection<CropRow> getCropRows() {
+    public List<CropRow> getCropRows() {
         return cropRows;
     }
 }
