@@ -2,6 +2,8 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
+import com.zipcodewilmington.froilansfarm.Farm.Field;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Driver;
@@ -51,6 +53,26 @@ public class TractorTest {
         Integer actualSize = rfs.getEdibles().size();
 
         Assert.assertEquals((Integer) 1, actualSize);
+    }
+
+    @Test
+    public void drive(){
+        Farm farm = new Farm();
+        CropRow cr = new CropRow();
+        TomatoPlant tp = new TomatoPlant();
+        tp.setFertilized(true);
+        tp.setHasBeenHarvested(false);
+        cr.getCrops().add(tp);
+        farm.getField().getCropRows().add(cr);
+        Tractor tractor = new Tractor();
+        tractor.operate(farm);
+        Farmer farmer = new Farmer("Joe");
+        farmer.mount(tractor);
+        farmer.drive();
+
+        Integer actual = farm.getFoodStorage().getEdibles().size();
+
+        Assert.assertEquals((Integer) 1, actual);
     }
 
     @Test
