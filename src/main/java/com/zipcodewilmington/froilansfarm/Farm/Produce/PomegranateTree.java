@@ -4,17 +4,19 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Pomegranate;
 
 public class PomegranateTree extends Crop {
-    private Boolean isFertilized;
-    private Boolean hasBeenHarvested;
+//    private Boolean isFertilized;
+//    private Boolean hasBeenHarvested;
 
     public PomegranateTree () {
-        this.isFertilized=false;
-        this.hasBeenHarvested=false;
+        super();
+//        this.isFertilized=false;
+//        this.hasBeenHarvested=false;
     }
 
     public Pomegranate yield() {
-        if(isFertilized && !hasBeenHarvested)
+        if( super.getFertilized() && !super.getHasBeenHarvested())
+
             return new Pomegranate();
-        else return null;
+        return null;
     }
 }

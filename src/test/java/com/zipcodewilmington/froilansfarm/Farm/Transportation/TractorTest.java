@@ -6,15 +6,10 @@ import com.zipcodewilmington.froilansfarm.Farm.Field;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
-import com.zipcodewilmington.froilansfarm.Human.Driver;
 import com.zipcodewilmington.froilansfarm.Human.Farmer;
 import com.zipcodewilmington.froilansfarm.Human.Rider;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.xml.transform.TransformerConfigurationException;
-
-import static org.junit.Assert.*;
 
 public class TractorTest {
 

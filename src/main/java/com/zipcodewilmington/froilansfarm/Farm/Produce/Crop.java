@@ -22,4 +22,8 @@ public abstract class Crop implements Produce {
     public Boolean getFertilized() {
         return isFertilized;
     }
+
+    public Boolean getHasBeenHarvested() {
+        return hasBeenHarvested;
+    }
 }
