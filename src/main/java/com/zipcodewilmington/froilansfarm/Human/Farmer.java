@@ -1,8 +1,12 @@
 package com.zipcodewilmington.froilansfarm.Human;
 
+import com.zipcodewilmington.froilansfarm.Farm.Farm;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Chicken;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Driveable;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
@@ -50,7 +54,17 @@ public class Farmer extends Person implements Driver, Botanist {
 
     public void feed(RefrigeratedFoodStorage storage, Animal animal){
         if (animal instanceof Horse)
+            for (int i = 0; i < 3; i++)
+                animal.eat(storage.getFirstInstanceOf(new EarCorn()));
+        else if (animal instanceof Chicken)
+            animal.eat(storage.getFirstInstanceOf(new Tomato()));
+        else if (animal instanceof Farmer) {
             animal.eat(storage.getFirstInstanceOf(new EarCorn()));
+            for (int i = 0; i < 2; i++)
+                animal.eat(storage.getFirstInstanceOf(new Tomato()));
+            for (int i = 0; i < 5; i++)
+                animal.eat(storage.getFirstInstanceOf(new EdibleEgg()));
+        }
     }
 
     @Override
