@@ -13,6 +13,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Tractor;
 import com.zipcodewilmington.froilansfarm.Human.Farmer;
 import com.zipcodewilmington.froilansfarm.Human.Pilot;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,7 +53,7 @@ public class WeekdayTest {
             farm.getStables().get(0).add(new Horse("Horse " +i));
 
     }
-    
+
     public void everyDayTask() {
         for(Chicken chicken : farm.getChickenCoops().get(0).getOccupants())
             froilan.feed(farm.getFoodStorage(), chicken);
@@ -61,5 +62,49 @@ public class WeekdayTest {
 
         froilan.feed(farm.getFoodStorage(),froilan);
         froilanda.feed(farm.getFoodStorage(),froilanda);
+    }
+
+    @Test
+    public void sunday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+
+    @Test
+    public void monday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+    @Test
+    public void tuesday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+    @Test
+    public void wednesday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+    @Test
+    public void thursday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+    @Test
+    public void friday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
+    }
+    @Test
+    public void saturday() {
+        everyDayTask();
+        Assert.assertFalse(froilan.getHungry());
+        Assert.assertFalse(froilanda.getHungry());
     }
 }
