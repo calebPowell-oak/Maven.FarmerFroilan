@@ -3,9 +3,12 @@ package com.zipcodewilmington.froilansfarm;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Chicken;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.CornStalk;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
+import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Farm.Shelter.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Farm.Shelter.Stable;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.CropDuster;
@@ -79,7 +82,15 @@ public class WeekdayTest {
     }
     @Test
     public void tuesday() {
+        setUpForTuesday();
         everyDayTask();
+        tractor.operate(farm);
+        froilan.mount(tractor);
+        froilan.drive();
+        froilan.dismount();
+        for(CropRow row : farm.getField().getCropRows())
+            for(Object crop : row.getCrops())
+                Assert.assertTrue(((Crop) crop).getHasBeenHarvested());
         Assert.assertFalse(froilan.getHungry());
         Assert.assertFalse(froilanda.getHungry());
     }
@@ -106,5 +117,14 @@ public class WeekdayTest {
         everyDayTask();
         Assert.assertFalse(froilan.getHungry());
         Assert.assertFalse(froilanda.getHungry());
+    }
+
+    public void setUpForTuesday() {
+        froilan.plant(new CornStalk(),farm.getField().getCropRows().get(0));
+        froilan.plant(new TomatoPlant(),farm.getField().getCropRows().get(1));
+        cropDuster.operate(farm);
+        froilanda.mount(cropDuster);
+        froilanda.fly();
+        froilanda.dismount();
     }
 }
