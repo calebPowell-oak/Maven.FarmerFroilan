@@ -2,8 +2,6 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
-import com.zipcodewilmington.froilansfarm.Farm.Field;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Farmer;
@@ -56,7 +54,6 @@ public class TractorTest {
         CropRow cr = new CropRow();
         TomatoPlant tp = new TomatoPlant();
         tp.setFertilized(true);
-        tp.setHasBeenHarvested(false);
         cr.getCrops().add(tp);
         farm.getField().getCropRows().add(cr);
         Tractor tractor = new Tractor();

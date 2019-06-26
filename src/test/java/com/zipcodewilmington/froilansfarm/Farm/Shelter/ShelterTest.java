@@ -4,8 +4,6 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Chicken;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ShelterTest {
 
     @Test

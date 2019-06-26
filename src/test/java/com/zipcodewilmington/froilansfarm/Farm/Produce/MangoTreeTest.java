@@ -5,18 +5,15 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Mango;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class MangoTreeTest {
 
     @Test
     public void yield() {
         MangoTree testMango = new MangoTree();
         testMango.setFertilized(true);
-        testMango.setHasBeenHarvested(false);
-        Edible expected = testMango.yield();
+        Mango expected = testMango.yield();
 
-        Assert.assertTrue((Mango)expected instanceof Edible);
+        Assert.assertTrue(expected instanceof Edible);
 
     }
 

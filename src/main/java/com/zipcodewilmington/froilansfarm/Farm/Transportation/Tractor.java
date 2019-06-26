@@ -5,7 +5,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
 import com.zipcodewilmington.froilansfarm.Human.Rider;
 
-public class Tractor implements FarmVehicle, Driveable, Rideable {
+public class Tractor extends Vehicle implements FarmVehicle {
     private Rider currentRider;
     private Farm currentFarm;
 
@@ -43,7 +43,6 @@ public class Tractor implements FarmVehicle, Driveable, Rideable {
         return currentFarm;
     }
 
-    @Override
     public void drive() {
         // for each croprow in field in farm
         for(CropRow row : currentFarm.getField().getCropRows()){

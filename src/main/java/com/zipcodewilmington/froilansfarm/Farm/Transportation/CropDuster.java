@@ -2,10 +2,9 @@ package com.zipcodewilmington.froilansfarm.Farm.Transportation;
 
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
-import com.zipcodewilmington.froilansfarm.Human.Pilot;
 import com.zipcodewilmington.froilansfarm.Human.Rider;
 
-public class CropDuster implements FarmVehicle, Flyable, Rideable {
+public class CropDuster extends Aircraft implements FarmVehicle {
     private Rider currentRider;
     private Farm currentFarm;
 
@@ -43,7 +42,6 @@ public class CropDuster implements FarmVehicle, Flyable, Rideable {
         return currentFarm;
     }
 
-    @Override
     public void fly() {
         // for each croprow in field in farm
         for(CropRow row : currentFarm.getField().getCropRows()){

@@ -14,12 +14,9 @@ public class PomegranateTreeTest {
 
         PomegranateTree testPomegranate = new PomegranateTree();
         testPomegranate.setFertilized(true);
-        testPomegranate.setHasBeenHarvested(false);
-        Edible expected = testPomegranate.yield();
+        Pomegranate expected = testPomegranate.yield();
 
-        Assert.assertTrue(((Pomegranate)expected instanceof Edible));
-
-
+        Assert.assertTrue((expected instanceof Edible));
     }
 
     @Test
