@@ -84,15 +84,21 @@ public class WeekdayTest {
     public void tuesday() {
         setUpForTuesday();
         everyDayTask();
+        Integer storageSizeBefore = farm.getFoodStorage().getEdibles().size();
         tractor.operate(farm);
         froilan.mount(tractor);
         froilan.drive();
+        Integer actual = farm.getFoodStorage().getEdibles().size();
         froilan.dismount();
         for(CropRow row : farm.getField().getCropRows())
             for(Object crop : row.getCrops())
                 Assert.assertTrue(((Crop) crop).getHasBeenHarvested());
         Assert.assertFalse(froilan.getHungry());
         Assert.assertFalse(froilanda.getHungry());
+        Integer expected = storageSizeBefore+(2*farm.getField().getCropRows().get(0).getCrops().size());
+        Assert.assertEquals(expected,actual);
+        for(Horse horse : farm.getStables().get(0).getOccupants())
+            Assert.assertFalse(horse.getHungry());
     }
     @Test
     public void wednesday() {

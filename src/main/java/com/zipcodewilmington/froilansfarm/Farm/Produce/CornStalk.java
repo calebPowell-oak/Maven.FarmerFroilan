@@ -13,8 +13,10 @@ public class CornStalk extends Crop {
 
     }
     public EarCorn yield() {
-        if( super.getFertilized() && !super.getHasBeenHarvested())
+        if( super.getFertilized() && !super.getHasBeenHarvested()) {
+            setHasBeenHarvested(true);
             return new EarCorn();
+        }
        return null;
     }
 }
