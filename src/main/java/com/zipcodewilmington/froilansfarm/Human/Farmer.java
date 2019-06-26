@@ -27,7 +27,6 @@ public class Farmer extends Person implements Driver, Botanist {
     public void mount(Rideable rideable) {
         currentMount = rideable;
         currentMount.takeRider(this);
-
     }
 
     public void dismount() {
