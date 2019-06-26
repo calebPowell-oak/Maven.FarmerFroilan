@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Generic.Animal;
 
-public class Chicken extends Animal implements Produce {
+public class Chicken extends Animal implements Produce<EdibleEgg> {
     private Boolean isFertilized;
 
 
@@ -16,11 +16,7 @@ public class Chicken extends Animal implements Produce {
         super("no name set");
     }
 
-    public EdibleEgg yield(){
-
-            return new EdibleEgg();
-
-    }
+    public EdibleEgg yield(){ return new EdibleEgg(); }
 
     public void eat(Edible thingToEat) { super.eat(thingToEat);
 

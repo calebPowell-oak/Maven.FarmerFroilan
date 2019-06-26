@@ -1,6 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Human;
 
-import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Chicken;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.CropRow;
@@ -8,9 +7,9 @@ import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EdibleEgg;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
 import com.zipcodewilmington.froilansfarm.Farm.RefrigeratedFoodStorage;
-import com.zipcodewilmington.froilansfarm.Farm.Transportation.Driveable;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Horse;
 import com.zipcodewilmington.froilansfarm.Farm.Transportation.Rideable;
+import com.zipcodewilmington.froilansfarm.Farm.Transportation.Tractor;
 import com.zipcodewilmington.froilansfarm.Generic.Animal;
 
 public class Farmer extends Person implements Driver, Botanist {
@@ -69,7 +68,7 @@ public class Farmer extends Person implements Driver, Botanist {
 
     @Override
     public void drive() {
-        if(currentMount instanceof Driveable)
-            ((Driveable) currentMount).drive();
+        if(currentMount instanceof Tractor)
+            ((Tractor) currentMount).drive();
     }
 }

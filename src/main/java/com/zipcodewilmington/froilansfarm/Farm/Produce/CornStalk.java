@@ -2,21 +2,7 @@ package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
 
-public class CornStalk extends Crop {
-//    private Boolean isFertilized;
-//    private Boolean hasBeenHarvested;
+public class CornStalk extends Crop<EarCorn> {
+    public CornStalk(){ super(new EarCorn()); }
 
-    public CornStalk(){
-        super();
-//        this.isFertilized=false;
-//        this.hasBeenHarvested=false;
-
-    }
-    public EarCorn yield() {
-        if( super.getFertilized() && !super.getHasBeenHarvested()) {
-            setHasBeenHarvested(true);
-            return new EarCorn();
-        }
-       return null;
-    }
 }
