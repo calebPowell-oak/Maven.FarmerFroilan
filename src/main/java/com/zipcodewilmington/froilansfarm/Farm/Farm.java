@@ -5,7 +5,6 @@ import com.zipcodewilmington.froilansfarm.Farm.Shelter.Farmhouse;
 import com.zipcodewilmington.froilansfarm.Farm.Shelter.Stable;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class Farm {

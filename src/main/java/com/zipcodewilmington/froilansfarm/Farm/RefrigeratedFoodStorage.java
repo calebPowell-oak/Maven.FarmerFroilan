@@ -2,10 +2,7 @@ package com.zipcodewilmington.froilansfarm.Farm;
 
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class RefrigeratedFoodStorage {
     private Double temperature;

@@ -1,22 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
 
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Tomato;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class TomatoPlantTest {
-
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
 
     @Test
     public void yield() {
@@ -24,8 +13,7 @@ public class TomatoPlantTest {
         //given
         TomatoPlant testTomato = new TomatoPlant();
         testTomato.setFertilized(true);
-        testTomato.setHasBeenHarvested(false);
-        Edible expected = testTomato.yield();
+        Tomato expected = testTomato.yield();
 
         Assert.assertTrue((expected instanceof Tomato));
 

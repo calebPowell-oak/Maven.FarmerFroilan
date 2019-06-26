@@ -1,11 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Farm.Produce;
 
 import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.EarCorn;
-import com.zipcodewilmington.froilansfarm.Farm.Produce.Edible.Edible;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CornStalkTest {
 
@@ -14,8 +11,7 @@ public class CornStalkTest {
 
         CornStalk testCorn = new CornStalk();
         testCorn.setFertilized(true);
-        testCorn.setHasBeenHarvested(false);
-        Edible expected = testCorn.yield();
+        EarCorn expected = testCorn.yield();
 
         Assert.assertTrue(expected instanceof EarCorn);
     }
